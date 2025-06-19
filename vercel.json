@@ -1,0 +1,20 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "Prueba1/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "Prueba1/dist/sportflex"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/Prueba1/dist/sportflex/index.html"
+    }
+  ],
+  "buildCommand": "cd Prueba1 && npm run build:prod",
+  "outputDirectory": "Prueba1/dist/sportflex"
+} 
